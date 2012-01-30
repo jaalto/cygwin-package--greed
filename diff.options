@@ -1,0 +1,9 @@
+# This file contains extra options passed to diff(1) when [makepatch] command
+# is run. The options are given one option per line.
+
+# The original makefile's 'clean' target removes this, so ignore
+# changes for it.
+-x greed.6
+
+# Debian patch adds this file
+-x README

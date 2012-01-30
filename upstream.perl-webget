@@ -1,0 +1,2 @@
+tag1: greed
+  http://packages.debian.org/unstable/greed pregexp:orig.tar.gz file:greed_3.4.orig.tar.gz new: x:

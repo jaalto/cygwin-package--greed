@@ -1,0 +1,6 @@
+# This file contains extra options when files are
+# installed. The options are given one option per line.
+#
+
+# Debian patch includes more comprehensive README
+--exclude=READ.ME

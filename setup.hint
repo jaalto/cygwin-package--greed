@@ -1,0 +1,5 @@
+sdesc: "Curses-based clone of the DOS freeware game Greed"
+ldesc: "Try to eat as much as possible of the board before munching yourself
+into a corner."
+category: Games
+requires: cygwin libncurses8

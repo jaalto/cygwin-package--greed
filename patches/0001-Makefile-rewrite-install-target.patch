@@ -1,0 +1,86 @@
+From 90c4aaf511092302efe4bf9f15ac0a460fa1fd04 Mon Sep 17 00:00:00 2001
+From: Jari Aalto <jari.aalto@cante.net>
+Date: Fri, 14 Mar 2008 13:12:30 +0200
+Subject: [PATCH] Makefile: rewrite install target
+
+Signed-off-by: Jari Aalto <jari.aalto@cante.net>
+---
+ Makefile |   42 +++++++++++++++++++++++++++++++++++++++---
+ 1 files changed, 39 insertions(+), 3 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 4bce13c..de2b0d8 100644
+--- a/Makefile
++++ b/Makefile
+@@ -2,6 +2,26 @@
+ # MSDOS users need PCCurses v1.3 (or later) and Microsoft C 5.1, plus
+ # slight editing of "chmod", "cp", and "rm" statements at bottom of this file.
+ 
++
++PACKAGE		= greed
++DESTDIR		=
++prefix		= /usr
++exec_prefix	= $(prefix)
++man_prefix	= $(prefix)/share
++
++BINDIR		= $(DESTDIR)$(exec_prefix)/bin
++SCOREDIR	= $(DESTDIR)/var/games/greed
++MANDIR		= $(DESTDIR)$(man_prefix)/man
++MANDIR6		= $(MANDIR)/man6
++
++INSTALL		= /usr/bin/install
++INSTALL_BIN	= $(INSTALL) -m 755
++INSTALL_DATA	= $(INSTALL) -m 644
++
++INSTALL_OBJS_BIN  = $(PACKAGE)
++INSTALL_OBJS_MAN  = *.6
++CC		  = gcc
++
+ # Note: When the version changes, you also have to change
+ # the RPM spec file and the LSM.
+ VERS=3.4
+@@ -31,22 +51,38 @@ CC = gcc
+ #CFLAGS=-Oilt -Gs
+ #TERMLIB = scurses.lib
+ 
++all: greed
++
+ greed: greed.c
+-	cc -DSCOREFILE=\"$(SFILE)\" -D$(SYSDEF) -DRELEASE=\"$(VERS)\" -o greed greed.c $(CFLAGS) $(TERMLIB)
++	$(CC) -DSCOREFILE=\"$(SFILE)\" -D$(SYSDEF) -DRELEASE=\"$(VERS)\" -o greed greed.c $(CFLAGS) $(TERMLIB)
+ 
+ greed.6: greed.xml
+ 	xmlto  man greed.xml
+ 
+-install: greed.6 uninstall
++install-old: greed.6 uninstall
+ 	cp greed $(DESTDIR)/usr/games
+ 	cp greed.6 $(DESTDIR)/usr/share/man/man6/greed.6
+ 
++install-man:
++	# install-man
++	$(INSTALL_BIN) -d $(MANDIR6)
++	$(INSTALL_DATA) $(INSTALL_OBJS_MAN) $(MANDIR6)
++
++install-bin:
++	# install-bin
++	$(INSTALL_BIN) -d $(BINDIR) $(SCOREDIR)
++	$(INSTALL_BIN) -s $(INSTALL_OBJS_BIN) $(BINDIR)
++
++install: all install-bin install-man
++
++.PHONY: clean install install-bin install-man
++
+ uninstall:
+ 	rm -f $(BIN)/install $(DESTDIR)/usr/share/man/man6/greed.6
+ 
+ clean:
+ 	rm -f *~ *.o greed greed-*.tar.gz  greed*.rpm
+-	rm -f greed.6 manpage.links manpage.refs
++	rm -f manpage.links manpage.refs
+ 
+ SOURCES = READ.ME Makefile greed.c greed.lsm greed.spec greed.xml
+ 
+-- 
+1.5.3.8
+

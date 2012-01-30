@@ -1,0 +1,68 @@
+greed
+------------------------------------------
+
+Curses-based clone of the DOS freeware game Greed
+
+Try to eat as much as possible of the board before munching yourself
+into a corner.
+
+Runtime requirements:
+  cygwin
+  libncurses8
+
+Build requirements:
+  cygwin
+  xmlto
+  libncurses-devel
+
+Canonical homepage:
+  http://www.catb.org/~esr/greed
+  http://packages.debian.org/greed
+
+Canonical download:
+  See above
+
+Version control repository:
+
+Mailing list:
+
+Forum / Wiki:
+
+IRC channel:
+
+Upstream contact:
+  Maintainer: Eric S. Raymond <esr@thyrsus.com>
+  Bugs: Eric S. Raymond <esr@thyrsus.com>
+
+License:
+  GPL
+
+Language:
+  C
+
+------------------------------------------
+
+Build instructions:
+  unpack greed-*-src.tar.bz2
+    if you use setup to install this source package, it will be
+    unpacked under /usr/src automatically
+  cd /usr/src
+  ./greed*.sh all
+
+------------------------------------------
+
+Files included in the binary distribution:
+  See content of *.tar.gz
+
+------------------------------------------
+
+Port Notes:
+- Makefile removes *.6 in order to generate it new from xml file.
+  However running xmlto gives verify error. See pach to fix cleaning
+  target regarding this.
+
+----- version 3.4-1 -----
+- Initial release 2008-03-12 Jari Aalto
+
+Cygwin port maintained by: Jari Aalto <jari.aalto@cante.net>
+Copyright (C) 2008 Jari Aalto; Licensed under GPL v2 or later
