@@ -1,6 +1,5 @@
 To: cygwin-announce@cygwin.com
-Subject: Updated: package N.N
-Subject: New package: greed 3.4-1 -- Curses-based clone of the DOS freeware game Greed
+Subject: Updated: greed 3.7-1 -- Curses-based clone of the DOS freeware game Greed
 
 PACKAGE DESCRIPTION
 ===================
@@ -14,7 +13,7 @@ into a corner.
 CHANGES SINCE LAST RELEASE
 ==========================
 
-None.
+See homepage.
 
 INSTALL OR UPGRADE NOTES
 ========================
