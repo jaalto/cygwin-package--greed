@@ -7,11 +7,9 @@ Try to eat as much as possible of the board before munching yourself
 into a corner.
 
 Runtime requirements:
-  cygwin
-  libncurses8
+  libncursesw10
 
 Build requirements:
-  cygwin
   xmlto
   libncurses-devel
 
