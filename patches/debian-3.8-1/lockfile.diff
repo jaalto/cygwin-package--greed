@@ -1,0 +1,21 @@
+Description: This patch replaces
+ the use of the creat function with
+ the open function in order avoid
+ open and/or truncate an existing
+ lock file/link.
+Forwarded: yes
+Bug-Debian: http://bugs.debian.org/692490
+Author: Josue Abarca <jmaslibre@debian.org>
+Last-Update: 2013-06-11
+
+--- a/greed.c
++++ b/greed.c
+@@ -583,7 +583,7 @@
+     int fd, x = 1;
+ 
+     if (on) {
+-	while ((fd = creat(LOCKPATH, 0)) == -1) {
++	while ((fd = open(LOCKPATH, O_RDWR | O_CREAT | O_EXCL, 0)) < 0) {
+ 	    printf("Waiting for scorefile access... %d/15\n", x);
+ 	    if (x++ >= 15) {
+ 		puts("Overriding stale lock...");
