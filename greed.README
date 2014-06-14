@@ -59,11 +59,14 @@ Port Notes:
   However running xmlto gives verify error. See pach to fix cleaning
   target regarding this.
 
+----- version 3.8-1 -----
+- New upstream release 2014-06-14 Jari Aalto
+
 ----- version 3.7-1 -----
 - New upstream release 2013-09-15 Jari Aalto
 
 ----- version 3.4-1 -----
 - Initial release 2008-03-12 Jari Aalto
 
-Cygwin port maintained by: user <jari.aalto@cante.net>
-Copyright (C) 2008-2013 Jari Aalto; Licensed under GPL v2 or later
+Cygwin port maintained by: Jari Aalto <jari.aalto@cante.net>
+Copyright (C) 2008-2014 Jari Aalto; Licensed under GPL v2 or later
