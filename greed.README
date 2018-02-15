@@ -59,6 +59,10 @@ Port Notes:
   However running xmlto gives verify error. See pach to fix cleaning
   target regarding this.
 
+----- version 3.10-2 -----
+- New update 2018-02-15 Jari Aalto
+- Add patch to fix storing highscore under /var/gams/greed/
+
 ----- version 3.10-1 -----
 - New upstream release 2015-02-13 Jari Aalto
 
@@ -72,4 +76,4 @@ Port Notes:
 - Initial release 2008-03-12 Jari Aalto
 
 Cygwin port maintained by: Jari Aalto <jari.aalto@cante.net>
-Copyright (C) 2008-2015 Jari Aalto; Licensed under GPL v2 or later
+Copyright (C) 2008-2018 Jari Aalto; Licensed under GPL v2 or later
