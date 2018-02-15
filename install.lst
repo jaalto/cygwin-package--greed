@@ -13,5 +13,6 @@
 #    man.1
 #    program.pl
 
+mkdir var/games/greed/
 greed usr/bin/
 greed.6
