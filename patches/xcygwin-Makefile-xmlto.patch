@@ -2,9 +2,13 @@ From: Jari Aalto <jri.aalto@cante.net>
 Subject: Ignore xmlto: failed to load external entity
 
 --- Makefile.orig	2018-02-15 17:02:50.138614600 +0200
-+++ Makefile	2018-02-15 17:03:07.297596000 +0200
-@@ -13,7 +13,7 @@
- 	xmlto man greed.xml
++++ Makefile	2018-02-15 17:09:08.819273900 +0200
+@@ -10,10 +10,10 @@
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) $(LDFLAGS) -DSCOREFILE=\"$(SFILE)\" -DRELEASE=\"$(VERS)\" -o greed greed.c -O3 -lcurses
+ 
+ greed.6: greed.xml
+-	xmlto man greed.xml
++	xmlto --skip-validation man greed.xml
  
  greed.html: greed.xml
 -	xmlto html-nochunks greed.xml
