@@ -1,0 +1,14 @@
+From: Jari Aalto <jari.aalto@cante.net>
+Subject: Store high score to correct location, not in Cygwin build directory
+
+--- Makefile.orig	2018-02-15 08:16:09.126665800 +0200
++++ Makefile	2018-02-15 08:16:38.314317100 +0200
+@@ -2,7 +2,7 @@
+ 
+ VERS=3.10
+ 
+-SFILE=$(DESTDIR)/var/games/greed/greed.hs
++SFILE=/var/games/greed/greed.hs
+ # Location of game executable
+ BIN=$(DESTDIR)/usr/games
+ 
