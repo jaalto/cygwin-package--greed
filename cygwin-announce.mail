@@ -1,5 +1,5 @@
 To: cygwin-announce@cygwin.com
-Subject: Updated: greed 3.10-1 -- Curses-based clone of the DOS freeware game Greed
+Subject: Updated: greed 3.10-2 -- Curses-based clone of the DOS freeware game Greed
 --text follows this line--
 
 PACKAGE DESCRIPTION
@@ -13,8 +13,8 @@ into a corner.
 
 CHANGES SINCE LAST RELEASE
 ==========================
-
-See homepage.
+- Cygwin: correct storing of high score at the end of game
+- See homepage.
 
 INSTALL OR UPGRADE NOTES
 ========================
